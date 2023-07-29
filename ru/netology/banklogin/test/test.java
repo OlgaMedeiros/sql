@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class test {
+package ru.netology.banklogin.test;
+public class test {
 }
