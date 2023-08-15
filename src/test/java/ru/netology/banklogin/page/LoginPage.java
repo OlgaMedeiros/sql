@@ -7,7 +7,6 @@ import com.google.common.base.Verify;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import ru.netology.banklogin.data.DataHelper;
-
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -25,13 +24,13 @@ public class LoginPage {
     private SelenideElement errorNotification;
 
     public void verifyVerificationPageVisiblity() {
-     errorNotification.shouldBe(visible);
+        errorNotification.shouldBe(visible);
     }
 
-public VerificationPage validLogin(DataHelper.AuthInfo) {
+public VerificationPage validLogin(DataHelper.AuthInfo info) {
     loginField.setValue(info.getLogin());
     passwordField.setValue(info.getPassword());
     loginButton.click();
-    return page(VerificationPage.class);
+    return new VerificationPage();
     }
 }

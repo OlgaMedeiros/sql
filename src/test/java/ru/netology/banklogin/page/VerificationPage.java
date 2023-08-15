@@ -1,7 +1,11 @@
 package ru.netology.banklogin.page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 
 public class VerificationPage {
 
@@ -18,9 +22,6 @@ public class VerificationPage {
         codeField.shouldBe(visible);
     }
 
-    public void verifyErrorNotificationVisiblity() {
-        errorNotification.shouldBe((visible);
-    }
 
     public DashboardPage validVerify(String verificationCode) {
         verify(verificationCode);
@@ -28,7 +29,7 @@ public class VerificationPage {
     }
 
     public void verify(String verificationCode) {
-        codeField.setValue((verificationCode);
+        codeField.setValue(verificationCode);
         verifyButton.click();
     }
 }

@@ -48,7 +48,7 @@ public class BankLoginTest {
         verificationPage.verifyVerificationPageVisiblity();
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode() );
-        verificationPage.verifyErrorNotificationVisiblity();
+        verificationPage.verifyVerificationPageVisiblity();
 
     }
 
