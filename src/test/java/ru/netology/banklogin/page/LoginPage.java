@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import ru.netology.banklogin.data.DataHelper;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage {
 
@@ -31,6 +32,6 @@ public VerificationPage validLogin(DataHelper.AuthInfo info) {
     loginField.setValue(info.getLogin());
     passwordField.setValue(info.getPassword());
     loginButton.click();
-    return new VerificationPage();
+    return page(VerificationPage.class);
     }
 }
